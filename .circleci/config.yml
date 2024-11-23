@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: circleci/python:3.9
+
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - run: python -m flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      - run: python -m flake8 . --count --exit-zero-on-error --max-complexity=10 --max-line-length=127 --statistics
+
+workflows:
+  version: 2.1
+  build-and-test:
+    jobs:
+      - build-and-test
