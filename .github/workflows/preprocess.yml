@@ -1,0 +1,28 @@
+name: Preprocessing Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          pip install pandas scikit-learn
+
+      - name: Preprocess data
+        run: |
+          python preprocess.py
+
+      - name: Upload preprocessed data
+        uses: actions/upload-artifact@v2
+        with:
+          name: preprocessed_data
+          path: data/preprocessed
+

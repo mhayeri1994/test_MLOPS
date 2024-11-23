@@ -1,0 +1,11 @@
+ID,Age,Gender,Income,Education
+1,25.0,Male,50000.0,Bachelor
+2,30.0,Female,60000.0,Master
+3,,Male,70000.0,PhD
+4,35.0,Female,,Bachelor
+5,20.0,Male,40000.0,
+6,40.0,Female,80000.0,Master
+7,45.0,Male,,PhD
+8,50.0,Female,90000.0,Bachelor
+9,,Male,100000.0,Master
+10,55.0,Female,110000.0,PhD
