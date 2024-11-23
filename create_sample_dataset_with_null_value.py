@@ -6,7 +6,7 @@ data = {
     'Age': [25, 30, np.nan, 35, 20, 40, 45, 50, np.nan, 55],
     'Gender': ['Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female'],
     'Income': [50000, 60000, 70000, np.nan, 40000, 80000, np.nan, 90000, 100000, 110000],
-    'Education': ['Bachelor', 'Master', 'PhD', 'Bachelor', np.nan, 'Master', 'PhD', 'Bachelor', 'Master', 'PhD']
+    'Education': ['Bachelor', 'Master', 'PhD', 'Bachelor', "Master", 'Master', 'PhD', 'Bachelor', 'Master', 'PhD']
 }
 
 df = pd.DataFrame(data)

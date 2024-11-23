@@ -1,19 +1,14 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 
 # Load data
 data = pd.read_csv('data/raw/data.csv')
 
 # Handle missing values
-data.fillna(data.mean(), inplace=True)
-
-# Encode categorical variables
-data['category'] = pd.Categorical(data['category']).codes
-
-# Scale data
-scaler = StandardScaler()
-data[['feature1', 'feature2']] = scaler.fit_transform(data[['feature1', 'feature2']])
+data.fillna(0, inplace=True)
 
 # Save preprocessed data
+## Create the directory if it doesn't exist
+import os
+if not os.path.exists('data/preprocessed'):
+    os.makedirs('data/preprocessed')
 data.to_csv('data/preprocessed/data.csv', index=False)
-
