@@ -27,5 +27,5 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 # Save the trained model to a file
 import pickle
-with open("trained_model.pkl", "wb") as f:
+with open("model.pkl", "wb") as f:
     pickle.dump(model, f)
