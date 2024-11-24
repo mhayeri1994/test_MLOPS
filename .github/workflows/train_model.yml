@@ -1,3 +1,4 @@
+
 name: Train Model
 
 on:
@@ -6,17 +7,41 @@ on:
       - main
 
 jobs:
-  train:
+  train-model:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
         run: |
-          pip install scikit-learn
+          pip install -r requirements.txt
       - name: Train model
         run: |
           python train_model.py
+      - name: Save model
+        run: |
+          mkdir -p models
+          cp model.pkl models/
+#--------------------------------
+# name: Train Model
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   train:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+#       - name: Install dependencies
+#         run: |
+#           pip install scikit-learn
+#       - name: Train model
+#         run: |
+#           python train_model.py
 
 #--------------------------------------------------------
 #             - name: Checkout
