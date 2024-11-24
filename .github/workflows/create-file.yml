@@ -1,0 +1,25 @@
+name: Train Model
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Train model
+        run: |
+          # Train your model here
+          echo hello > test.txt
+
+      - name: Upload model
+        uses: actions/upload-artifact@v3
+        with:
+          name: trained-model
+          # path: path/to/your/model
+          path: test.txt
